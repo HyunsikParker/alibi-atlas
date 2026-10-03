@@ -1,0 +1,190 @@
+{
+  "format": "alibi-atlas-preview-v1",
+  "source": {
+    "kind": "sanity",
+    "projectId": "0k0a3q37",
+    "dataset": "production",
+    "fetchedAt": "2026-10-03T07:30:50.736Z",
+    "revision": "NmMgYNjnGEkXUr2p1OOFSM"
+  },
+  "caseFile": {
+    "_id": "atlas-case-lantern",
+    "_rev": "NmMgYNjnGEkXUr2p1OOFSM",
+    "characters": [
+      {
+        "_id": "atlas-character-mira",
+        "name": "Mira",
+        "occupation": "Archivist"
+      },
+      {
+        "_id": "atlas-character-theo",
+        "name": "Theo",
+        "occupation": "Courier"
+      },
+      {
+        "_id": "atlas-character-jules",
+        "name": "Jules",
+        "occupation": "Keeper"
+      }
+    ],
+    "description": "A lantern vanishes from the harbor archive at dusk. Check whether the characters can be where the scenes put them. This original fictional case contains two planted continuity errors and one reported account.",
+    "events": [
+      {
+        "_id": "atlas-event-mira-ledger",
+        "certainty": "established",
+        "characterId": "atlas-character-mira",
+        "end": 1105,
+        "placeId": "atlas-place-archive",
+        "source": "Author’s scene note: Mira stays at the desk until 18:25.",
+        "start": 1085,
+        "title": "Signs the archive ledger"
+      },
+      {
+        "_id": "atlas-event-mira-dock",
+        "certainty": "established",
+        "characterId": "atlas-character-mira",
+        "end": 1124,
+        "placeId": "atlas-place-dock",
+        "source": "Author’s scene note: the dock check begins at 18:20.",
+        "start": 1114,
+        "title": "Checks the departing boat"
+      },
+      {
+        "_id": "atlas-event-theo-package",
+        "certainty": "established",
+        "characterId": "atlas-character-theo",
+        "end": 1100,
+        "placeId": "atlas-place-arcade",
+        "source": "Author’s scene note: Theo leaves the arcade at 18:20.",
+        "start": 1095,
+        "title": "Collects a sealed package"
+      },
+      {
+        "_id": "atlas-event-theo-bell",
+        "certainty": "established",
+        "characterId": "atlas-character-theo",
+        "end": 1118,
+        "placeId": "atlas-place-tower",
+        "source": "Author’s scene note: delivery is at the bell tower at 18:24.",
+        "start": 1110,
+        "title": "Delivers to the keeper"
+      },
+      {
+        "_id": "atlas-event-jules-tower",
+        "certainty": "established",
+        "characterId": "atlas-character-jules",
+        "end": 1115,
+        "placeId": "atlas-place-tower",
+        "source": "Author’s scene note: Jules is at the tower throughout the first half hour.",
+        "start": 1080,
+        "title": "Waits for the courier"
+      },
+      {
+        "_id": "atlas-event-jules-account",
+        "certainty": "reported",
+        "characterId": "atlas-character-jules",
+        "end": 1105,
+        "placeId": "atlas-place-dock",
+        "source": "Dialogue note: “I checked the boat at twenty past.” A character’s claim is not an established event.",
+        "start": 1100,
+        "title": "Says they visited the dock"
+      }
+    ],
+    "journeys": [
+      {
+        "_id": "atlas-journey-archive-dock",
+        "fromId": "atlas-place-archive",
+        "minutes": 8,
+        "toId": "atlas-place-dock"
+      },
+      {
+        "_id": "atlas-journey-archive-arcade",
+        "fromId": "atlas-place-archive",
+        "minutes": 6,
+        "toId": "atlas-place-arcade"
+      },
+      {
+        "_id": "atlas-journey-dock-tower",
+        "fromId": "atlas-place-dock",
+        "minutes": 7,
+        "toId": "atlas-place-tower"
+      },
+      {
+        "_id": "atlas-journey-arcade-tower",
+        "fromId": "atlas-place-arcade",
+        "minutes": 10,
+        "toId": "atlas-place-tower"
+      }
+    ],
+    "places": [
+      {
+        "_id": "atlas-place-archive",
+        "name": "Archive",
+        "x": 18,
+        "y": 30
+      },
+      {
+        "_id": "atlas-place-dock",
+        "name": "North dock",
+        "x": 72,
+        "y": 25
+      },
+      {
+        "_id": "atlas-place-arcade",
+        "name": "Arcade",
+        "x": 25,
+        "y": 78
+      },
+      {
+        "_id": "atlas-place-tower",
+        "name": "Bell tower",
+        "x": 80,
+        "y": 76
+      }
+    ],
+    "title": "The missing lantern",
+    "windowEnd": 1140,
+    "windowStart": 1080
+  },
+  "changes": [
+    {
+      "eventId": "atlas-event-mira-dock",
+      "event": {
+        "_id": "atlas-event-mira-dock",
+        "certainty": "established",
+        "characterId": "atlas-character-mira",
+        "end": 1124,
+        "placeId": "atlas-place-dock",
+        "source": "Author’s scene note: the dock check begins at 18:20.",
+        "start": 1114,
+        "title": "Checks the departing boat"
+      }
+    },
+    {
+      "eventId": "atlas-event-theo-bell",
+      "event": {
+        "_id": "atlas-event-theo-bell",
+        "certainty": "established",
+        "characterId": "atlas-character-theo",
+        "end": 1118,
+        "placeId": "atlas-place-tower",
+        "source": "Author’s scene note: delivery is at the bell tower at 18:24.",
+        "start": 1110,
+        "title": "Delivers to the keeper"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "id": "reported:atlas-event-jules-account",
+      "kind": "reported",
+      "severity": "review",
+      "characterId": "atlas-character-jules",
+      "eventIds": [
+        "atlas-event-jules-account"
+      ],
+      "title": "Jules’s account needs a decision",
+      "explanation": "This is a character’s statement, not an established event. Keep it as dialogue, or establish it in the story before testing it as a physical fact."
+    }
+  ]
+}

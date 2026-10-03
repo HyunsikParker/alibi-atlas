@@ -4,6 +4,8 @@ A continuity workbench for fiction. Check whether a character can be where a sce
 
 [Demo](https://hyunsikparker.github.io/alibi-atlas/) · [Build notes](docs/build-notes.md) · MIT
 
+![The published case, with two planted continuity errors](docs/workbench.jpg)
+
 ## Try the case
 
 The missing lantern has three characters, four places and six events. Two continuity errors are planted in the published story.
@@ -13,6 +15,8 @@ The missing lantern has three characters, four places and six events. Two contin
 3. Jules’s dock visit is a reported account. Changing it to **This happens in the story** introduces a new overlap with the tower scene.
 
 Preview changes stay in the browser. **Reset preview** restores the loaded story; **Copy report JSON** and **Export preview report** carry the case, changed events, findings and source metadata. **Inspect report JSON** opens the same payload for direct inspection or manual copying. Refreshing reads the published Sanity content again.
+
+[Example preview report](docs/preview-example.json) · [Both corrections](docs/preview-resolved.jpg) · [390px layout](docs/mobile.jpg)
 
 ## Run locally
 

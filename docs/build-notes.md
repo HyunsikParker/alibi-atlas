@@ -19,6 +19,12 @@ That separation determines the interface: physical conflicts on the left, a time
 
 The domain tests and static build passed locally. The initial cloud readback found 18 published documents, two physical conflicts and one reported account. Native browser input verified both corrections, reported-versus-established handling, invalid-time rejection and reset. A 390px layout check measured no page-wide overflow; the timeline intentionally scrolls inside its own container.
 
+The public Pages workflow also passed all 12 tests, type generation, type checking, build and deployment. A published description change triggered the live-update notice while preserving a preview edit. An event was then corrected in Studio: after refresh, the public viewer showed one physical conflict instead of two, with no preview edits. Restoring that event brought back the original two conflicts. A complete case readback matched every field in the pre-test snapshot.
+
+The visible JSON report was read back from the public app and saved as the example in this repository. It contains two preview corrections, no physical conflicts and one reported-account review. That verifies the payload, not the browser's download or clipboard delivery.
+
 The browser automation changed time-input DOM values without updating React until native key input was used. That was recorded as a test-input issue. A later local static-preview request also returned `net::ERR_CONNECTION_RESET`; it was recorded separately from application and Sanity failures.
 
 The download observer did not confirm a saved file, so the interface says an export was requested, not that a download completed. The clipboard API later reported success, but the automation's readback was empty. A visible, read-only JSON report was added for direct inspection and manual copying. Neither a saved file nor verified clipboard contents is claimed from a button click alone.
+
+The browser controller also stalled on the refresh confirmation dialog during a dirty-preview test. A separate reader tab verified the new published description; clean-preview refresh was verified directly. Confirmation-dialog completion was not inferred from the attempted click.
