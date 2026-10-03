@@ -21,4 +21,4 @@ The domain tests and static build passed locally. The initial cloud readback fou
 
 The browser automation changed time-input DOM values without updating React until native key input was used. That was recorded as a test-input issue. A later local static-preview request also returned `net::ERR_CONNECTION_RESET`; it was recorded separately from application and Sanity failures.
 
-The download observer did not confirm a saved file, so the interface says an export was requested, not that a download completed. A copyable JSON path was added. No download-completion claim is made from a button click alone.
+The download observer did not confirm a saved file, so the interface says an export was requested, not that a download completed. The clipboard API later reported success, but the automation's readback was empty. A visible, read-only JSON report was added for direct inspection and manual copying. Neither a saved file nor verified clipboard contents is claimed from a button click alone.

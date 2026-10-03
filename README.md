@@ -12,7 +12,7 @@ The missing lantern has three characters, four places and six events. Two contin
 2. Theo has four minutes to make a ten-minute journey. Select **Delivers to the keeper** and try **18:30–18:38**.
 3. Jules’s dock visit is a reported account. Changing it to **This happens in the story** introduces a new overlap with the tower scene.
 
-Preview changes stay in the browser. **Reset preview** restores the loaded story; **Copy report JSON** and **Export preview report** carry the case, changed events, findings and source metadata. Refreshing reads the published Sanity content again.
+Preview changes stay in the browser. **Reset preview** restores the loaded story; **Copy report JSON** and **Export preview report** carry the case, changed events, findings and source metadata. **Inspect report JSON** opens the same payload for direct inspection or manual copying. Refreshing reads the published Sanity content again.
 
 ## Run locally
 

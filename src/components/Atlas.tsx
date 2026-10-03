@@ -78,6 +78,7 @@ export function Atlas() {
         </div>
         <section className="preview-bar"><div><strong>{dirtyEvents.length ? dirtyEvents.length + ' preview edit' + (dirtyEvents.length === 1 ? '' : 's') : 'No preview edits'}</strong><span>{conflicts.length ? conflicts.length + ' continuity conflict' + (conflicts.length === 1 ? ' remains' : 's remain') : 'No continuity conflicts detected'}</span></div><div className="preview-actions"><button onClick={reset} disabled={!dirtyEvents.length}>Reset preview</button><button onClick={() => void copyPreview()}>Copy report JSON</button><button onClick={exportPreview}>Export preview report</button></div></section>
         {notice && <p className="notice" role="status">{notice}</p>}
+        <details className="report-inspector"><summary>Inspect report JSON</summary><p>This is the report used by the copy and export buttons.</p><textarea aria-label="Preview report JSON" readOnly value={previewReport()}/></details>
         <footer className="app-footer"><p>Alibi Atlas checks authored time and place constraints. A reported account is not proof, and a consistent timeline is not a complete story review.</p><span>{source?.kind === 'sanity' ? 'Content Lake · ' + source.dataset : 'Connect Sanity before using this as a challenge entry'}</span></footer>
       </>}
     </main>
