@@ -1,0 +1,10 @@
+import {createClient} from '@sanity/client';
+import {caseId, caseQuery} from '../src/lib/sanity.ts';
+import {validateCase} from '../src/domain/validation.ts';
+import {analyze} from '../src/domain/analyze.ts';
+const client = createClient({projectId:'0k0a3q37',dataset:'production',apiVersion:'2026-10-01',useCdn:false,perspective:'published'});
+const file = validateCase(await client.fetch(caseQuery, {id:caseId}));
+const documents = await client.fetch<number>('count(*[_id match "atlas-*"])');
+if (documents !== 18 || !file._rev) throw new Error('Cloud content did not verify.');
+const findings = analyze(file);
+console.log(JSON.stringify({projectId:'0k0a3q37',dataset:'production',documents,revision:file._rev,conflicts:findings.filter(x=>x.severity==='conflict').length,reportedAccounts:findings.filter(x=>x.kind==='reported').length}));
